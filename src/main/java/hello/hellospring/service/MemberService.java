@@ -2,7 +2,6 @@ package hello.hellospring.service;
 
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
-import hello.hellospring.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,7 +26,6 @@ public class MemberService {
         validateDuplicateMember(member);
         memberRepository.save(member);
         return member.getId();
-
     }
 
     private void validateDuplicateMember(Member member) {
@@ -42,7 +40,7 @@ public class MemberService {
      * 전체 회원 조회
      */
     public List<Member> findMembers(){
-        return memberRepository.findAll();
+            return memberRepository.findAll();
     }
 
     public Optional<Member> findOne(Long memberId){
